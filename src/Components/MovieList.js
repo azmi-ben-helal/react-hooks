@@ -5,16 +5,16 @@ import { Col } from 'react-bootstrap'
 import Search from './Filter'
 
 const getMovies = (movies) => {
-  const filtredMovies = movies.filter((movie) =>
-    movie.Title.toLowerCase().includes(e.target.value.toLowerCase()),
-  )
+  // const filtredMovies = movies.filter((movie) =>
+  //   movie.Title.toLowerCase().includes(e.target.value.toLowerCase()),
+  // )
   return (
     <div>
       <div>
         <Search />
       </div>
       <Col>
-        {filtredMovies.map((movie) => (
+        {movies.map((movie) => (
           <MovieCard movie={movie} />
         ))}
       </Col>
