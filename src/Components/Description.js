@@ -2,10 +2,11 @@ import React from 'react'
 import { useState } from 'react'
 import { Card, Button } from 'react-bootstrap'
 import ReactPlayer from 'react-player'
-import { useHistory } from 'react-router-dom'
+import { useHistory, useParams } from 'react-router-dom'
 
 const Description = (props) => {
   const history = useHistory()
+  const { id } = useParams()
   const [movies, setMovies] = useState([
     {
       id: 1,
@@ -35,12 +36,7 @@ const Description = (props) => {
       trailerLink: 'https://www.youtube.com/watch?v=5UfA_aKBGMc',
     },
   ])
-
-  props.location.pathname.split('/')
-  console.log(props.location.pathname.split('/')[2])
-  const Movie = movies.find(
-    (element) => element.id == props.location.pathname.split('/')[2],
-  )
+  const Movie = movies.find((element) => element.id == id)
 
   return (
     <>

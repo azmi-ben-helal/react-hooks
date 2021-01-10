@@ -1,8 +1,10 @@
 import React from 'react'
 import { useState } from 'react'
-import { Route, Link, Redirect } from 'react-router-dom'
+import { Route, Link, Redirect, useHistory } from 'react-router-dom'
 
 const MovieCard = (props) => {
+  const history = useHistory()
+
   return (
     <>
       <Link to={`/description/${props.movie.id}`}>

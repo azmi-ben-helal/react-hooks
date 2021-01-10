@@ -45,7 +45,7 @@ function App() {
   }
   return (
     <Container>
-      <Route path="/description" component={Description} />
+      <Route path="/description/:id" component={Description} />
       <Route exact path="/">
         <Row>
           <MovieList movies={movies} />
